@@ -1,17 +1,17 @@
 package com.way2learnonline.portfolio.service;
 
-import java.net.URI;
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
+//import org.springframework.cloud.client.ServiceInstance;
+//import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.way2learnonline.portfolio.domain.Quote;
@@ -31,8 +31,8 @@ public class QuoteRemoteCallService {
 	private RestTemplate restTemplate;
 	
 
-	@Autowired
-	private DiscoveryClient discoveryClient; 
+//	@Autowired
+//	private DiscoveryClient discoveryClient; 
   
 	/**
 	 * Retrieve multiple quotes.
@@ -44,6 +44,7 @@ public class QuoteRemoteCallService {
 	public List<Quote> getQuotes(String symbols) {
 		logger.debug("retrieving multiple quotes: " + symbols);
 		
+		/*
 		List<ServiceInstance> instances=  discoveryClient.getInstances(quotesService);
 		URI uri=instances.get(0).getUri();
 		
@@ -54,6 +55,8 @@ public class QuoteRemoteCallService {
 		List<Quote> quotes = Arrays.asList(quotesArr);
 		logger.debug("Received quotes: {}",quotes);
 		return quotes;
+		*/
+		return new ArrayList<>();
 	}
 
 	/**

@@ -1,6 +1,7 @@
 spring:
   application:
      name: portfolio-service
+     
   datasource:
     url: jdbc:postgresql://localhost/micro
     username: postgres
@@ -11,9 +12,10 @@ spring:
 eureka:
   instance:
     instance-id: ${spring.application.name}:${random.value} 
+
   client:
     serviceUrl:
-      defaultZone: http://localhost:4004/eureka/
+      defaultZone: http://localhost:5002/eureka/
 server:
   port: 0
   

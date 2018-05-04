@@ -9,8 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
+//import org.springframework.cloud.client.ServiceInstance;
+//import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -48,8 +48,8 @@ public class PortfolioService {
 	@Autowired	
 	private RestTemplate restTemplate;
 	
-	@Autowired
-	private DiscoveryClient discoveryClient;
+//	@Autowired
+//	private DiscoveryClient discoveryClient;
 
 	// @Value("${pivotal.quotesService.name}")
 	// protected String quotesService;
@@ -120,6 +120,7 @@ public class PortfolioService {
 	@Transactional
 	public Order addOrder(Order order) {
 		
+		/*
 		List<ServiceInstance> instances=  discoveryClient.getInstances(accountsService);
 		URI uri=instances.get(0).getUri();
 		
@@ -163,5 +164,7 @@ public class PortfolioService {
 				return null;
 			}
 		}
+		*/
+		return null;
 	}
 }

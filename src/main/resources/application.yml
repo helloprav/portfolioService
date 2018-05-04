@@ -1,0 +1,31 @@
+spring:
+  application:
+     name: portfolio-service
+  datasource:
+    url: postgres://gxnxiopdsnoqsb:c3f3971858491cb25896a8ab0bf5d00b5f51001977581abd67b0028c4eb2df11@ec2-54-243-137-182.compute-1.amazonaws.com:5432/d5173sl39gerqo
+    username: gxnxiopdsnoqsb
+    password: c3f3971858491cb25896a8ab0bf5d00b5f51001977581abd67b0028c4eb2df11
+  jpa:
+    generate-ddl: true
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.value} 
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:4004/eureka/
+server:
+  port: 0
+  
+
+pivotal:
+  quotesService:
+    name: quotes-service
+  accountsService:
+    name: accounts-service
+  portfolioService:
+    name: portfolio-service
+logging:
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID:- }){magenta} %clr(---){faint} %clr([trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}]){yellow} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%replace(%xException){'\n','\u2028'}%nopex%n"
+  
